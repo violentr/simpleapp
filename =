@@ -1,0 +1,12 @@
+Building native extensions.  This could take a while...
+Depending on your version of ruby, you may need to install ruby rdoc/ri data:
+
+<= 1.8.6 : unsupported
+ = 1.8.7 : gem install rdoc-data; rdoc-data --install
+ = 1.9.1 : gem install rdoc-data; rdoc-data --install
+>= 1.9.2 : nothing to do! Yay!
+Successfully installed json-1.8.1
+Successfully installed rdoc-4.1.1
+2 gems installed
+Installing ri documentation for json-1.8.1...
+Installing ri documentation for rdoc-4.1.1...

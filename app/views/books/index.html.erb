@@ -1,0 +1,4 @@
+<% @list_books.each do |b| %>
+	<ul>Books</ul>
+	<li><%=b.title if b.title.exists? %></li>
+	<% end %>
