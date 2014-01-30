@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+	layout 'default'
 	def index
 		@books=Book.find(:all)
 	end
