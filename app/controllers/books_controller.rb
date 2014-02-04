@@ -44,6 +44,6 @@ class BooksController < ApplicationController
 		redirect_to :action =>'index'	
 	end
 	def show_subjects
-		@subjects =Subject.find(params[:id])
+		@subject =Subject.find(params[:id])
 	end
 end
