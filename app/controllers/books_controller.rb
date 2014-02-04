@@ -24,6 +24,7 @@ class BooksController < ApplicationController
 	end
 
 	def edit
+		@books =Book.find(:all)
 		@book =Book.find(params[:id])
 		@subjects =Subject.find(:all)
 	end
@@ -39,7 +40,7 @@ class BooksController < ApplicationController
 	end
 
 	def delete
-		Book.find(params[:id]).destroy
+		@book = Book.find(params[:id]).destroy
 		redirect_to :action =>'index'	
 	end
 	def show_subjects

@@ -1,4 +1,6 @@
 <b><%= link_to 'Edit' ,edit_book_path %></b>
+<%= link_to 'Delete',{:action => 'delete',:controller =>'books',:id => @book},
+:confirm => "Are you sure you want to delete this item?" %> 
 <h3><%= @book.title %></h3>
 <p>Price: <%= @book.price %></br>
 	<strong>Subject: </strong> <%= @book.subject.name %> </br>
