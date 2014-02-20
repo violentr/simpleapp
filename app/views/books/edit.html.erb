@@ -1,0 +1,22 @@
+<h3>Edit Book Details</h3>
+	<% form_for @book, :url => {:action => :update, :id => @book} do |f| %>
+<p>
+	<%= label_tag :title ,'Title' %>
+	<%= text_field 'book','title' %>
+</p>
+<p>
+	<%= label_tag :price ,'Price' %>
+	<%= text_field 'book','price' %>
+</p>
+<p>
+	<%= label_tag :subject ,'Subject' %>
+	<%= collection_select(:book,:subject_id,@subjects,:id,:name) %>
+</p>
+<p>
+	<%= label_tag :description,'Description' %></br>
+	<%= text_area 'book','description' %>
+</p>
+
+<%= submit_tag "Save changes" %>
+<%= link_to 'Back', {:action => 'index'} %>
+<% end %>
