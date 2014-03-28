@@ -2,6 +2,7 @@ ActionController::Routing::Routes.draw do |map|
     #root :to => 'books#index'
    map.root :controller => :books
    map.resources :books
+   map.resources :thoughts
    
   # The priority is based upon order of creation: first created -> highest priority.
 

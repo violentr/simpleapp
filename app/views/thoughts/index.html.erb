@@ -1,0 +1,59 @@
+
+<%  @items = [1,1,1] %>
+<table class="pos-table">
+  <% @items.each do |item| %>
+    <tr class="<%= cycle("odd", "even") -%>">
+      <td>item</td>
+      <td>item2</td>
+      <td>item</td>
+  <% end %>
+</table>
+
+<% @items.each do |item| %>
+  <div style="border:1px solid black;height:25px;width:105px;background-color:<%= cycle("white","blue","red") %>">
+    <span style="background-color:<%= current_cycle %>"><% item %></span>
+  </div>
+<% end %>
+
+
+<% @items =[['Days','Time'],['Call Out Fee including 1st hour on site per Van, £','Hourly Charge
+  thereafter, £'],['Mon-Fri','0800-1630'],['Mon-Fri','1630-0800'],['Weekend (bank hol)','All Day'],['Your Charge here']] %>
+<% items_b = [1] %> 
+<table id='rates-table'>
+  <% items_b.each do |item|  %>
+      <tr class="<%= cycle ("odd","even")%> ">
+          <td><%=@items[0] %></td>
+          <td><%=@items[1] %></td>
+          <td><%=@items[2] %></td>
+        </tr>
+        <% end %>
+      </table>
+
+
+
+
+ <%  @items = [{:first => 'Robert', :middle => 'Daniel', :last => 'James'},
+              {:first => 'Emily', :middle => 'Shannon', :maiden => 'Pike', :last => 'Hicks'},
+             {:first => 'June', :middle => 'Dae', :last => 'Jones'}] %>
+ <% @items.each do |item| %>
+   <tr class="<%= cycle("odd", "even", :name => "row_class") -%>">
+     <td>
+       <% item.values.each do |value| %>
+         <%# Create a named cycle "colors" %>
+         <span style="color:<%= cycle("red", "green", "blue", :name => "colors") -%>">
+           <%= value %>
+         </span>
+       <% end %>
+       <% reset_cycle("colors") %>
+     </td>
+  </tr>
+<% end %>
+  
+<h1>My Thoughts </h1>
+<%= form_remote_tag :url =>{:action =>'log'}, :html => {:id =>'thought-form'}  %>
+<%= text_field_tag 'thought' ,nil, :size => 40 %>
+<%= submit_tag 'Log Thought' %>
+
+<div id="thoughts">
+                  
+</div>

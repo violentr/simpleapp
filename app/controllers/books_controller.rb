@@ -2,6 +2,7 @@ class BooksController < ApplicationController
 	layout 'default'
 	def index
 		@books=Book.find(:all)
+		@subjects =Subject.find(:all)
 	end
 
 	def show
@@ -46,4 +47,5 @@ class BooksController < ApplicationController
 	def show_subjects
 		@subject =Subject.find(params[:id])
 	end
+ 
 end
