@@ -29,9 +29,6 @@
         <% end %>
       </table>
 
-
-
-
  <%  @items = [{:first => 'Robert', :middle => 'Daniel', :last => 'James'},
               {:first => 'Emily', :middle => 'Shannon', :maiden => 'Pike', :last => 'Hicks'},
              {:first => 'June', :middle => 'Dae', :last => 'Jones'}] %>
@@ -49,7 +46,7 @@
   </tr>
 <% end %>
   
-<h1>My Thoughts </h1>
+<h1>My Thoughts </h1> <p> Implemented by using Rjs templates </p>
 <%= form_remote_tag :url =>{:action =>'log'}, :html => {:id =>'thought-form'}  %>
 <%= text_field_tag 'thought' ,nil, :size => 40 %>
 <%= submit_tag 'Log Thought' %>
